@@ -1,0 +1,69 @@
+.error-page {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-family: BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #ffffff;
+    background: #000000;
+    text-align: center;
+  }
+  .bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('dart.png'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: contrast(0.95) brightness(0.55);
+    z-index: 0;
+  }
+  .bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+  }
+  .content {
+    position: relative;
+    z-index: 2;
+    padding: 24px;
+    max-width: 920px;
+  }
+  .big {
+    font-size: clamp(48px, 12vw, 140px);
+    font-weight: 800;
+    margin: 0 0 12px;
+    letter-spacing: 0.04em;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  }
+  .sub {
+    font-size: clamp(14px, 2.6vw, 20px);
+    margin: 0 0 18px;
+    opacity: 0.95;
+  }
+  .home {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.06);
+    font-weight: 600;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .home:hover,
+  .home:focus {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    outline: none;
+  }
+  @media (max-width: 420px) {
+    .big { letter-spacing: 0.02em; }
+    .content { padding: 18px; }
+  }
